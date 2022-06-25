@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preact + Tailwind</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body>
+  <main>
+    <p>Here's some stuff</p>
+    <article>
+      <p>Here's a counter</p>
+      <div id="counter"></div>
+    </article>
+  </main>
+  <script type="module">
+    import { render } from 'https://unpkg.com/preact@latest?module'
+    import { html } from 'https://unpkg.com/htm@3.0.4/preact/index.module.js?module'
+    import { Counter } from './Counter.mjs'
+
+    render(html`<${Counter} start=${1}><//>`, document.getElementById('counter'))
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "concurrently \"python3 -m http.server\" \"tailwindcss -i input.css -o output.css --watch\"",
+    "build": "docker build -t preact-tailwind:latest .",
+    "start": "docker run -p 8080:80 preact-tailwind:latest"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "tailwindcss": "^3.1.4"
+  }
+}
